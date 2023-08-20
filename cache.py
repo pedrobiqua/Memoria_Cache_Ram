@@ -8,6 +8,7 @@ class Cache(Memoria):
     
     def read(self, ender):
         # Tem o endereço no cache? Se não copiar os endereços da memoria ram para a cache
+        self.ram.verifica_endereco(ender)
         for val in self.memoria:
             if( val == ender):
                 # Encontrei, HIT o cache
@@ -24,6 +25,7 @@ class Cache(Memoria):
 
     def write(self, ender, val):
         # Tem o endereço no cache? Se não copiar os endereços da memoria ram para a cache
+        self.ram.verifica_endereco(ender)
         for val in self.memoria:
             if( val == ender):
                 # Encontrei, HIT o cache 
